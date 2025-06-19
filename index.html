@@ -75,53 +75,55 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
-        .two-column-section {
+        .section-title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #5ba0f2;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .reasoning-table {
+            width: 100%;
+            margin: 2rem auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-collapse: collapse;
+            overflow: hidden;
+        }
+        .reasoning-table th {
+            background-color: #5ba0f2;
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: bold;
+        }
+        .reasoning-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .reasoning-table tr:last-child td {
+            border-bottom: none;
+        }
+        .reasoning-table tr:hover {
+            background-color: #f8f9fa;
+        }
+        .adaptive-section {
             padding: 3rem 0;
             margin-top: 2rem;
         }
-        .left-column-content {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
+        .robustness-section {
+            background-color: #f8f9fa;
+            padding: 3rem 0;
+            margin-top: 2rem;
         }
-        .left-column-text {
-            flex: 1;
-        }
-        .left-column-image {
-            flex: 0 0 auto;
-            max-width: 200px;
-        }
-        .left-column-image img {
+        .robustness-image {
             width: 100%;
+            max-width: 700px;
+            margin: 2rem auto;
+            display: block;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .right-column-content {
-            text-align: center;
-        }
-        .right-column-image {
-            margin-top: 1.5rem;
-        }
-        .right-column-image img {
-            width: 100%;
-            max-width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .column-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #5ba0f2;
-            margin-bottom: 1rem;
-        }
-        @media (max-width: 768px) {
-            .left-column-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            .left-column-image {
-                max-width: 150px;
-            }
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
     </style>
 </head>
@@ -240,71 +242,69 @@
         </div>
     </section>
 
-    <section class="two-column-section">
+    <section class="adaptive-section">
         <div class="container is-max-widescreen">
-            <div class="columns is-variable is-8">
-                <!-- Left Column - Text and Image Side by Side -->
-                <div class="column is-half">
-                    <div class="left-column-content">
-                        <div class="left-column-text">
-                            <h3 class="column-title">Does TARS show adaptive behavior?</h3>
-                            <p>
-                                TARS demonstrates adaptive behavior by allocating different amounts of compute based on prompt difficulty. The model learns to reason more extensively when faced with ambiguous or potentially harmful queries, while processing straightforward requests more efficiently.
-                            </p>
-                            <p>
-                                This adaptive allocation of computational resources represents a significant advancement in AI safety, allowing models to be both efficient and thorough when needed.
-                            </p>
-                        </div>
-                        <div class="left-column-table">
-                            <table class="reasoning-table">
-                                <thead>
-                                    <tr>
-                                        <th>Group Topic</th>
-                                        <th>Reasoning</th>
-                                        <th>Answer</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Hate Speech Generation</td>
-                                        <td>289.88</td>
-                                        <td>165.18</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Assistance with Crimes or Torts</td>
-                                        <td>306.01</td>
-                                        <td>249.07</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Potentially Inappropriate Topics</td>
-                                        <td>371.67</td>
-                                        <td>316.39</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Potentially Unqualified Advice</td>
-                                        <td>456.66</td>
-                                        <td>608.88</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+            <div class="columns is-centered">
+                <div class="column is-four-fifths">
+                    <h3 class="section-title">Does TARS show adaptive behavior?</h3>
+                    <div class="content has-text-justified">
+                        <p>
+                            TARS demonstrates adaptive behavior by allocating different amounts of compute based on prompt difficulty. The model learns to reason more extensively when faced with ambiguous or potentially harmful queries, while processing straightforward requests more efficiently.
+                        </p>
+                        <p>
+                            This adaptive allocation of computational resources represents a significant advancement in AI safety, allowing models to be both efficient and thorough when needed. The table below shows the average token length for reasoning and answer components across different topic categories.
+                        </p>
                     </div>
+                    <table class="reasoning-table">
+                        <thead>
+                            <tr>
+                                <th>Group Topic</th>
+                                <th>Reasoning</th>
+                                <th>Answer</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Hate Speech Generation</td>
+                                <td>289.88</td>
+                                <td>165.18</td>
+                            </tr>
+                            <tr>
+                                <td>Assistance with Crimes or Torts</td>
+                                <td>306.01</td>
+                                <td>249.07</td>
+                            </tr>
+                            <tr>
+                                <td>Potentially Inappropriate Topics</td>
+                                <td>371.67</td>
+                                <td>316.39</td>
+                            </tr>
+                            <tr>
+                                <td>Potentially Unqualified Advice</td>
+                                <td>456.66</td>
+                                <td>608.88</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Right Column - Text Above, Image Below -->
-                <div class="column is-half">
-                    <div class="right-column-content">
-                        <h3 class="column-title">Why is TARS effective?</h3>
+    <section class="robustness-section">
+        <div class="container is-max-widescreen">
+            <div class="columns is-centered">
+                <div class="column is-four-fifths">
+                    <h3 class="section-title">Why is TARS effective?</h3>
+                    <div class="content has-text-justified">
                         <p>
                             Our comprehensive evaluation shows that TARS achieves superior robustness against both white-box attacks (such as Greedy Coordinate Gradient) and black-box attacks (like PAIR). The model maintains strong performance across various attack scenarios while preserving its helpful capabilities on benign requests.
                         </p>
                         <p>
-                            The results demonstrate that reasoning-based defenses can provide a more principled approach to AI safety compared to traditional methods.
+                            The results demonstrate that reasoning-based defenses can provide a more principled approach to AI safety compared to traditional methods. The chart below illustrates the robustness analysis across different attack vectors and safety metrics.
                         </p>
-                        <div class="right-column-image">
-                            <img src="./static/images/robustness_chart.png" alt="Robustness Analysis Chart">
-                        </div>
                     </div>
+                    <img src="./static/images/robustness_chart.png" alt="Robustness Analysis Chart" class="robustness-image">
                 </div>
             </div>
         </div>
