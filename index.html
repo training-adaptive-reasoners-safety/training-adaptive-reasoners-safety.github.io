@@ -247,7 +247,7 @@
                 <div class="column is-half">
                     <div class="left-column-content">
                         <div class="left-column-text">
-                            <h3 class="column-title">Adaptive Reasoning</h3>
+                            <h3 class="column-title">Does TARS show adaptive behavior?</h3>
                             <p>
                                 TARS demonstrates adaptive behavior by allocating different amounts of compute based on prompt difficulty. The model learns to reason more extensively when faced with ambiguous or potentially harmful queries, while processing straightforward requests more efficiently.
                             </p>
@@ -255,8 +255,38 @@
                                 This adaptive allocation of computational resources represents a significant advancement in AI safety, allowing models to be both efficient and thorough when needed.
                             </p>
                         </div>
-                        <div class="left-column-image">
-                            <img src="./static/images/adaptive_reasoning.png" alt="Adaptive Reasoning Visualization">
+                        <div class="left-column-table">
+                            <table class="reasoning-table">
+                                <thead>
+                                    <tr>
+                                        <th>Group Topic</th>
+                                        <th>Reasoning</th>
+                                        <th>Answer</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Hate Speech Generation</td>
+                                        <td>289.88</td>
+                                        <td>165.18</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Assistance with Crimes or Torts</td>
+                                        <td>306.01</td>
+                                        <td>249.07</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Potentially Inappropriate Topics</td>
+                                        <td>371.67</td>
+                                        <td>316.39</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Potentially Unqualified Advice</td>
+                                        <td>456.66</td>
+                                        <td>608.88</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -264,7 +294,7 @@
                 <!-- Right Column - Text Above, Image Below -->
                 <div class="column is-half">
                     <div class="right-column-content">
-                        <h3 class="column-title">Robustness Analysis</h3>
+                        <h3 class="column-title">Why is TARS effective?</h3>
                         <p>
                             Our comprehensive evaluation shows that TARS achieves superior robustness against both white-box attacks (such as Greedy Coordinate Gradient) and black-box attacks (like PAIR). The model maintains strong performance across various attack scenarios while preserving its helpful capabilities on benign requests.
                         </p>
