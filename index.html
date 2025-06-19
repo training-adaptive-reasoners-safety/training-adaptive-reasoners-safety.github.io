@@ -1,66 +1,155 @@
-\<section class="hero">
-   <div class="hero-body">
-     <div class="container is-max-desktop">
-       <div class="columns is-centered">
-         <div class="column has-text-centered">
--          <h1 class="title is-1 publication-title">Training Adaptive Reasoners for Safety</h1>
-+          <!-- Big bold black title -->
-+          <h1 class="title is-1 publication-title has-text-black has-text-weight-bold">
-+            TARS: Training Adaptive Reasoners for Safety
-+          </h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="TARS: Training Adaptive Reasoners for Safety.">
+        
+  <meta name="keywords" content="TARS, Reasoning for Safety">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Training Adaptive Reasoners for Safety</title>
 
-+          <!-- Smaller blue subtitle -->
-+          <h2 class="subtitle is-4 has-text-link">
-+            Reasoning as an Adaptive Defense for Safety
-+          </h2>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
 
-           <div class="is-size-5 publication-authors">
-             <span class="author-block">
-               <a href="https://danielkty.github.io">Taeyoun Kim</a><sup>1</sup>,</span>
-             <span class="author-block">
-               <a href="https://tajwarfahim.github.io">Fahim Tajwar</a><sup>2</sup>,</span>
-             <span class="author-block">
-               <a href="https://www.cs.cmu.edu/~aditirag/">Aditi Raghunathan</a><sup>2</sup>,
-             </span>
-             <span class="author-block">
-               <a href="https://aviralkumar2907.github.io">Aviral Kumar</a><sup>2</sup>,
-             </span>
-           </div>
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
 
-           <div class="is-size-5 publication-authors">
-             <span class="author-block"><sup>1</sup>Carnegie Mellon University</span>
-           </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
 
-           <div class="column has-text-centered">
-             <div class="publication-links">
--              <span class="link-block">
--                <a href="https://arxiv.org/pdf/2011.12948"
--                   class="external-link button is-normal is-rounded is-dark">
-+              <span class="link-block">
-+                <a href="https://arxiv.org/pdf/2011.12948"
-+                   class="external-link button is-link is-rounded is-normal">
-                   <span class="icon">
-                       <i class="fas fa-file-pdf"></i>
-                   </span>
-                   <span>Paper</span>
-                 </a>
-               </span>
-               <span class="link-block">
--                <a href="https://arxiv.org/abs/2011.12948"
--                   class="external-link button is-normal is-rounded is-dark">
-+                <a href="https://arxiv.org/abs/2011.12948"
-+                   class="external-link button is-link is-rounded is-normal">
-                   <span class="icon">
-                       <i class="ai ai-arxiv"></i>
-                   </span>
-                   <span>arXiv</span>
-                 </a>
-               </span>
-               <!-- Other buttons unchanged -->
-             </div>
-           </div>
-         </div>
-       </div>
-     </div>
-   </div>
+  <style>
+    .main-title {
+      font-size: 3rem;
+      font-weight: bold;
+      color: black;
+      margin-bottom: 1rem;
+    }
+    
+    .paper-title {
+      font-size: 2rem;
+      color: #3273dc;
+      margin-bottom: 2rem;
+    }
+    
+    .blue-button {
+      background-color: #3273dc !important;
+      border-color: #3273dc !important;
+    }
+    
+    .blue-button:hover {
+      background-color: #2366d1 !important;
+      border-color: #2366d1 !important;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://hypernerf.github.io">
+            HyperNeRF
+          </a>
+          <a class="navbar-item" href="https://nerfies.github.io">
+            Nerfies
+          </a>
+          <a class="navbar-item" href="https://latentfusion.github.io">
+            LatentFusion
+          </a>
+          <a class="navbar-item" href="https://photoshape.github.io">
+            PhotoShape
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="main-title">TARS: Training Adaptive Reasoners for Safety</h1>
+          <h2 class="paper-title">Reasoning as an Adaptive Defense for Safety</h2>
+          
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://danielkty.github.io">Taeyoun Kim</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://tajwarfahim.github.io">Fahim Tajwar</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://www.cs.cmu.edu/~aditirag/">Aditi Raghunathan</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://aviralkumar2907.github.io">Aviral Kumar</a><sup>2</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Carnegie Mellon University</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2011.12948"
+                   class="external-link button is-normal is-rounded blue-button">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2011.12948"
+                   class="external-link button is-normal is-rounded blue-button">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+
+
+</body>
+</html>
