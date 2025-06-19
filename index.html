@@ -75,6 +75,54 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
+        .two-column-section {
+            padding: 3rem 0;
+            margin-top: 2rem;
+        }
+        .left-column-content {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .left-column-text {
+            flex: 1;
+        }
+        .left-column-image {
+            flex: 0 0 auto;
+            max-width: 200px;
+        }
+        .left-column-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .right-column-content {
+            text-align: center;
+        }
+        .right-column-image {
+            margin-top: 1.5rem;
+        }
+        .right-column-image img {
+            width: 100%;
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .column-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #5ba0f2;
+            margin-bottom: 1rem;
+        }
+        @media (max-width: 768px) {
+            .left-column-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .left-column-image {
+                max-width: 150px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -186,6 +234,46 @@
                         <p>
                             We compare TARS with SFT/DPO methods that train models to reason using the same prompts and compute. We also compare to RL without reasoning. TARS can achieve the best safety while maintaining low refusal.
                         </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="two-column-section">
+        <div class="container is-max-desktop">
+            <div class="columns is-variable is-8">
+                <!-- Left Column - Text and Image Side by Side -->
+                <div class="column is-half">
+                    <div class="left-column-content">
+                        <div class="left-column-text">
+                            <h3 class="column-title">Adaptive Reasoning</h3>
+                            <p>
+                                TARS demonstrates adaptive behavior by allocating different amounts of compute based on prompt difficulty. The model learns to reason more extensively when faced with ambiguous or potentially harmful queries, while processing straightforward requests more efficiently.
+                            </p>
+                            <p>
+                                This adaptive allocation of computational resources represents a significant advancement in AI safety, allowing models to be both efficient and thorough when needed.
+                            </p>
+                        </div>
+                        <div class="left-column-image">
+                            <img src="./static/images/adaptive_reasoning.png" alt="Adaptive Reasoning Visualization">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column - Text Above, Image Below -->
+                <div class="column is-half">
+                    <div class="right-column-content">
+                        <h3 class="column-title">Robustness Analysis</h3>
+                        <p>
+                            Our comprehensive evaluation shows that TARS achieves superior robustness against both white-box attacks (such as Greedy Coordinate Gradient) and black-box attacks (like PAIR). The model maintains strong performance across various attack scenarios while preserving its helpful capabilities on benign requests.
+                        </p>
+                        <p>
+                            The results demonstrate that reasoning-based defenses can provide a more principled approach to AI safety compared to traditional methods.
+                        </p>
+                        <div class="right-column-image">
+                            <img src="./static/images/robustness_chart.png" alt="Robustness Analysis Chart">
+                        </div>
                     </div>
                 </div>
             </div>
