@@ -1,158 +1,196 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta name="description"
-content="TARS: Training Adaptive Reasoners for Safety.">
-<meta name="keywords" content="TARS, Reasoning for Safety">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Training Adaptive Reasoners for Safety</title>
-<link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-rel="stylesheet">
-<link rel="stylesheet" href="./static/css/bulma.min.css">
-<link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-<link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-<link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-<link rel="stylesheet"
-href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-<link rel="stylesheet" href="./static/css/index.css">
-<link rel="icon" href="./static/images/favicon.svg">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script defer src="./static/js/fontawesome.all.min.js"></script>
-<script src="./static/js/bulma-carousel.min.js"></script>
-<script src="./static/js/bulma-slider.min.js"></script>
-<script src="./static/js/index.js"></script>
-<style>
-.main-title {
-font-size: 3rem;
-font-weight: bold;
-color: black;
-margin-bottom: 1rem;
-line-height: 1.2;
-max-width: 100%;
- }
-.paper-title {
-font-size: 2rem;
-color: #5ba0f2;
-margin-bottom: 2rem;
- }
-.blue-button {
-background-color: #5ba0f2 !important;
-border-color: #5ba0f2 !important;
- }
-.blue-button:hover {
-background-color: #4a8fd9 !important;
-border-color: #4a8fd9 !important;
- }
-.ingredient-box {
-background-color: #f8f9fa;
-border: 1px solid #e9ecef;
-border-radius: 8px;
-padding: 1.5rem;
-margin-bottom: 1rem;
-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-.ingredient-label {
-font-weight: bold;
-color: #5ba0f2;
-font-size: 1.2rem;
-margin-bottom: 0.5rem;
-}
-</style>
+    <meta charset="utf-8">
+    <meta name="description"
+          content="TARS: Training Adaptive Reasoners for Safety.">
+    <meta name="keywords" content="TARS, Reasoning for Safety">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Training Adaptive Reasoners for Safety</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="icon" href="./static/images/favicon.svg">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+
+    <style>
+        .main-title {
+            font-size: 3rem;
+            font-weight: bold;
+            color: black;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            max-width: 100%;
+        }
+        .paper-title {
+            font-size: 2rem;
+            color: #5ba0f2;
+            margin-bottom: 2rem;
+        }
+        .blue-button {
+            background-color: #5ba0f2 !important;
+            border-color: #5ba0f2 !important;
+        }
+        .blue-button:hover {
+            background-color: #4a8fd9 !important;
+            border-color: #4a8fd9 !important;
+        }
+        .ingredient-box {
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .ingredient-label {
+            font-weight: bold;
+            color: #5ba0f2;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .results-section {
+            background-color: #f8f9fa;
+            padding: 3rem 0;
+            margin-top: 2rem;
+        }
+        .results-image {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+    </style>
 </head>
 <body>
 
-<section class="hero">
-<div class="hero-body">
-<div class="container is-max-desktop">
-<div class="columns is-centered">
-<div class="column has-text-centered">
-<h1 class="main-title">TARS: Training Adaptive Reasoners for Safety</h1>
-<h2 class="paper-title">Reasoning as an Adaptive Defense for Safety</h2>
-<div class="is-size-5 publication-authors">
-<span class="author-block">
-<a href="https://danielkty.github.io">Taeyoun Kim</a></span>
-<span class="author-block">
-<a href="https://tajwarfahim.github.io">Fahim Tajwar</a></span>
-<span class="author-block">
-<a href="https://www.cs.cmu.edu/~aditirag/">Aditi Raghunathan</a>
-</span>
-<span class="author-block">
-<a href="https://aviralkumar2907.github.io">Aviral Kumar</a>
-</span>
-</div>
-<div class="is-size-5 publication-authors">
-<span class="author-block">Carnegie Mellon University</span>
-</div>
-<div class="column has-text-centered">
-<div class="publication-links">
-<!-- PDF Link. -->
-<span class="link-block">
-<a href="https://arxiv.org/pdf/2011.12948"
-class="external-link button is-normal is-rounded blue-button">
-<span class="icon">
-<i class="fas fa-file-pdf"></i>
-</span>
-<span>Paper</span>
-</a>
-</span>
-<span class="link-block">
-<a href="https://arxiv.org/abs/2011.12948"
-class="external-link button is-normal is-rounded blue-button">
-<span class="icon">
-<i class="ai ai-arxiv"></i>
-</span>
-<span>arXiv</span>
-</a>
-</span>
-<span class="link-block">
-<a href="#"
-class="external-link button is-normal is-rounded blue-button">
-<span class="icon">
-<i class="fas fa-robot"></i>
-</span>
-<span>Model</span>
-</a>
-</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="section">
-<div class="container is-max-desktop">
-<div class="columns is-centered has-text-centered">
-<div class="column is-four-fifths">
-<h2 class="title is-3">TARS</h2>
-<div class="content has-text-justified">
-<img src="./static/images/AST Fig.pdf" alt="TARS Main Figure" style="width: 100%; max-width: 800px; margin: 0 auto; display: block;">
-</div>
-<div class="content has-text-justified" style="margin-top: 2rem;">
-<p>
- Reasoning methods that adaptively allocate test-time compute have advanced LLM performance in math and code. We study how we can utilize this framework to train models that are robust to safety vulnerabilities. We build a recipe called TARS: Training Adaptive Reasoners for Safety, a reinforcement learning (RL) approach that trains models to reason about safety using chain-of-thought traces and a reward signal that balances safety with task completion. When building TARS, we identify three critical design choices: (1) a premature SFT training stage, (2) a mix of harmful, harmless, and ambiguous prompts to prevent shortcut behaviors such as over-refusal, and (3) a reward function to prevent lack of reasoning. Models trained with TARS exhibit adaptive behaviors and spend more compute on ambiguous queries, achieve better safety-refusal trade-offs, internally learn to better distinguish between safe and unsafe prompts, and attain greater robustness to both white-box (e.g., GCG) and black-box attacks (e.g., PAIR). We find that TARS also preserves general reasoning capabilities (e.g., on math benchmarks) despite minimal exposure on such data. Overall, our work provides a principled and open recipe to help LLMs defend against jailbreaks and harmful requests through adaptive reasoning.
-</p>
-</div>
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="main-title">TARS: Training Adaptive Reasoners for Safety</h1>
+                        <h2 class="paper-title">Reasoning as an Adaptive Defense for Safety</h2>
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">
+                                <a href="https://danielkty.github.io">Taeyoun Kim</a></span>
+                            <span class="author-block">
+                                <a href="https://tajwarfahim.github.io">Fahim Tajwar</a></span>
+                            <span class="author-block">
+                                <a href="https://www.cs.cmu.edu/~aditirag/">Aditi Raghunathan</a>
+                            </span>
+                            <span class="author-block">
+                                <a href="https://aviralkumar2907.github.io">Aviral Kumar</a>
+                            </span>
+                        </div>
 
-<div class="content" style="margin-top: 3rem;">
-<div class="ingredient-box">
-<div class="ingredient-label">Ingredient 1: Premature Training</div>
-<p>During the SFT warmup stage before online RL training, we found that incompletely training with early stopping and a low learning rate gives better exploratory behavior during RL. This increases the safety-refusal trade-off after online RL.</p>
-</div>
-<div class="ingredient-box">
-<div class="ingredient-label">Ingredient 2: Mix Prompts</div>
-<p>Training on solely harmful prompts with a safety reward during RL leads to degenerate reasoning traces and over-refusal on harmless prompts. Thus, we mix in harmless prompts with a task completion reward to encourage reasoning which carries over to harmful prompts.</p>
-</div>
-<div class="ingredient-box">
-<div class="ingredient-label">Ingredient 3 Split Rewards: </div>
-<p>Splitting the reward model into safety and helpfulness rewards increases exploration and a wider safety-refusal trade-off, leadning to increased safety.</p>
-</div>
-</div>
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">Carnegie Mellon University</span>
+                        </div>
 
-</div>
-</div>
-</div>
-</section>
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+                                <!-- PDF Link. -->
+                                <span class="link-block">
+                                    <a href="https://arxiv.org/pdf/2011.12948"
+                                       class="external-link button is-normal is-rounded blue-button">
+                                        <span class="icon">
+                                            <i class="fas fa-file-pdf"></i>
+                                        </span>
+                                        <span>Paper</span>
+                                    </a>
+                                </span>
+                                <span class="link-block">
+                                    <a href="https://arxiv.org/abs/2011.12948"
+                                       class="external-link button is-normal is-rounded blue-button">
+                                        <span class="icon">
+                                            <i class="ai ai-arxiv"></i>
+                                        </span>
+                                        <span>arXiv</span>
+                                    </a>
+                                </span>
+                                <span class="link-block">
+                                    <a href="#"
+                                       class="external-link button is-normal is-rounded blue-button">
+                                        <span class="icon">
+                                            <i class="fas fa-robot"></i>
+                                        </span>
+                                        <span>Model</span>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">TARS</h2>
+                    <div class="content has-text-justified">
+                        <img src="./static/images/AST Fig.pdf" alt="TARS Main Figure" style="width: 100%; max-width: 800px; margin: 0 auto; display: block;">
+                    </div>
+                    <div class="content has-text-justified" style="margin-top: 2rem;">
+                        <p>
+                            Reasoning methods that adaptively allocate test-time compute have advanced LLM performance in math and code. We study how we can utilize this framework to train models that are robust to safety vulnerabilities. We build a recipe called TARS: Training Adaptive Reasoners for Safety, a reinforcement learning (RL) approach that trains models to reason about safety using chain-of-thought traces and a reward signal that balances safety with task completion. When building TARS, we identify three critical design choices: (1) a premature SFT training stage, (2) a mix of harmful, harmless, and ambiguous prompts to prevent shortcut behaviors such as over-refusal, and (3) a reward function to prevent lack of reasoning. Models trained with TARS exhibit adaptive behaviors and spend more compute on ambiguous queries, achieve better safety-refusal trade-offs, internally learn to better distinguish between safe and unsafe prompts, and attain greater robustness to both white-box (e.g., GCG) and black-box attacks (e.g., PAIR). We find that TARS also preserves general reasoning capabilities (e.g., on math benchmarks) despite minimal exposure on such data. Overall, our work provides a principled and open recipe to help LLMs defend against jailbreaks and harmful requests through adaptive reasoning.
+                        </p>
+                    </div>
+
+                    <div class="content" style="margin-top: 3rem;">
+                        <div class="ingredient-box">
+                            <div class="ingredient-label">Ingredient 1: Premature Training</div>
+                            <p>During the SFT warmup stage before online RL training, we found that incompletely training with early stopping and a low learning rate gives better exploratory behavior during RL. This increases the safety-refusal trade-off after online RL.</p>
+                        </div>
+                        <div class="ingredient-box">
+                            <div class="ingredient-label">Ingredient 2: Mix Prompts</div>
+                            <p>Training on solely harmful prompts with a safety reward during RL leads to degenerate reasoning traces and over-refusal on harmless prompts. Thus, we mix in harmless prompts with a task completion reward to encourage reasoning which carries over to harmful prompts.</p>
+                        </div>
+                        <div class="ingredient-box">
+                            <div class="ingredient-label">Ingredient 3 Split Rewards: </div>
+                            <p>Splitting the reward model into safety and helpfulness rewards increases exploration and a wider safety-refusal trade-off, leadning to increased safety.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="results-section">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3" style="margin-bottom: 2rem;">Safety-Refusal Trade-off</h2>
+                    <div class="content has-text-justified">
+                        <img src="./static/images/results.png" alt="TARS Results" class="results-image">
+                    </div>
+                    <div class="content has-text-justified" style="margin-top: 2rem;">
+                        <p>
+                            We compare TARS with SFT/DPO methods that train models to reason using the same prompts and compute. We also compare to RL without reasoning. TARS can achieve the best safety while maintaining low refusal.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 </body>
 </html>
