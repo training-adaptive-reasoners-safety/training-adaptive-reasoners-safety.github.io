@@ -404,24 +404,45 @@
     </section>
 
     <section class="section">
-        <div class="container is-max-widescreen">
-            <div class="columns is-centered">
-                <div class="column is-four-fifths">
-                    <h3 class="section-title">BibTeX</h3>
-                    <div class="content">
-                        <div style="background-color: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 1.5rem; font-family: 'Courier New', monospace; font-size: 0.9rem; overflow-x: auto;">
-<pre>@article{,
+    <div class="container is-max-widescreen">
+        <div class="columns is-centered">
+            <div class="column is-four-fifths">
+                <h3 class="section-title">BibTeX</h3>
+                <div class="content">
+                    <div style="background-color: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 1.5rem; font-family: 'Courier New', monospace; font-size: 0.9rem; overflow-x: auto; position: relative;">
+                        <button onclick="copyBibTeX()" style="position: absolute; top: 10px; right: 10px; background-color: #5ba0f2; color: white; border: none; border-radius: 4px; padding: 6px 12px; font-size: 0.8rem; cursor: pointer; font-weight: bold;" onmouseover="this.style.backgroundColor='#4a8bc2'" onmouseout="this.style.backgroundColor='#5ba0f2'">Copy</button>
+<pre id="bibtex-content">@article{,
   title={},
   author={},
   journal={},
   year={},
 }</pre>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<script>
+function copyBibTeX() {
+    const bibtext = document.getElementById('bibtex-content').textContent;
+    navigator.clipboard.writeText(bibtext).then(function() {
+        // Change button text temporarily to show success
+        const button = event.target;
+        const originalText = button.textContent;
+        button.textContent = 'Copied!';
+        button.style.backgroundColor = '#28a745';
+        setTimeout(function() {
+            button.textContent = originalText;
+            button.style.backgroundColor = '#5ba0f2';
+        }, 2000);
+    }).catch(function(err) {
+        console.error('Failed to copy: ', err);
+        alert('Failed to copy to clipboard');
+    });
+}
+</script>
 
     <footer class="footer" style="background-color: #f8f9fa; padding: 2rem 0; margin-top: 3rem; border-top: 1px solid #e9ecef;">
         <div class="container">
