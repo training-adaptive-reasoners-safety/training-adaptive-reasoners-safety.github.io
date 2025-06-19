@@ -260,7 +260,7 @@
                     <h2 class="section-title">Motivation</h2>
                     <div class="content has-text-justified" style="margin-bottom: 3rem;">
                         <p>
-                        While reasoning or test-time compute has been shown to improve safety, it remains unclear what the best practices are or what the general recipe is to achieve reasoning models with strong safety and less over-refusal. Key questions include: How should we design the training data? Should we use SFT or RL? What reward functions encourage generalization rather than shortcuts such as refusing to every prompt? To address this, we create an online reinforcement learning recipe with three design choices (ingredients) that achieve strong performance on the safety-refusal trade-off. Our ablations that led to these design choices are in our <a href="#" style="color: #5ba0f2;">paper</a>.
+                        While reasoning or test-time compute has been shown to improve safety, it remains unclear what the best practices are or what the general recipe is to achieve reasoning models with strong safety and less over-refusal. Key questions include: How should we design the training data? Should we use SFT or RL? What reward functions encourage generalization rather than shortcuts such as refusing to every prompt? To address this, we create an online reinforcement learning recipe with three design choices (ingredients) and train Qwen 2.5 1.5B Instruct into a reasoning model that achieves strong performance on the safety-refusal trade-off. The ablations that led to these design choices are in our <a href="#" style="color: #5ba0f2;">paper</a>.
                         </p>
                     </div>
 
@@ -394,7 +394,10 @@
                     <h3 class="section-title">TARS is safer than open-source models!</h3>
                     <div class="content has-text-justified">
                         <p>
-                          TODO
+                          We also compare TARS-trained models against Llama 3.1 8B Instruct, Llama 3.2 1B Instruct, and Circuit Breakers (Llama CB, Mistral CB), which are also 8-7B. For the circuit breakers, we retrain from the base models after removing XSTest from the training data to prevent data contamination.
+                        </p>
+                        <p>
+                          We see that TARS-trained models achieve a better safety-refusal trade-off than Llama models. For circuit breakers, Llama CB is comparable to TARS with a slightly lower performance on the safety-refusal trade-off. Mistral CB on the other hand high refusal rates. We found that Mistral CB learns to output gibberish as an overcautious defense. Furthermore, our comparison highlights that our smaller model (1.5B) can be safer and more helpful than larger models (Llama CB: 8B) when trained to reason with TARS.
                         </p>
                     </div>
                     <img src="./static/images/open-source.png" alt="TARS vs Open-Source Models Safety Comparison" class="comparison-image">
