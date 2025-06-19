@@ -49,7 +49,7 @@
             border-color: #4a8fd9 !important;
         }
         .ingredient-box {
-            background-color: #f8f9fa;
+            background-color: white;
             border: 1px solid #e9ecef;
             border-radius: 8px;
             padding: 1.5rem;
@@ -107,6 +107,11 @@
         }
         .reasoning-table tr:hover {
             background-color: #f8f9fa;
+        }
+        .method-section {
+            background-color: #f8f9fa;
+            padding: 3rem 0;
+            margin-top: 2rem;
         }
         .adaptive-section {
             padding: 3rem 0;
@@ -239,8 +244,23 @@
                             Reasoning methods that adaptively allocate test-time compute have advanced LLM performance in math and code. We study how we can utilize this framework to train models that are robust to safety vulnerabilities. We build a recipe called TARS: Training Adaptive Reasoners for Safety, a reinforcement learning (RL) approach that trains models to reason about safety using chain-of-thought traces and a reward signal that balances safety with task completion. When building TARS, we identify three critical design choices: (1) a premature SFT training stage, (2) a mix of harmful, harmless, and ambiguous prompts to prevent shortcut behaviors such as over-refusal, and (3) a reward function to prevent lack of reasoning. Models trained with TARS exhibit adaptive behaviors and spend more compute on ambiguous queries, achieve better safety-refusal trade-offs, internally learn to better distinguish between safe and unsafe prompts, and attain greater robustness to both white-box (e.g., GCG) and black-box attacks (e.g., PAIR). We find that TARS also preserves general reasoning capabilities (e.g., on math benchmarks) despite minimal exposure on such data. Overall, our work provides a principled and open recipe to help LLMs defend against jailbreaks and harmful requests through adaptive reasoning.
                         </p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                    <div class="content" style="margin-top: 3rem;">
+    <section class="method-section">
+        <div class="container is-max-widescreen">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="section-title">Method</h2>
+                    <div class="content has-text-justified" style="margin-bottom: 3rem;">
+                        <p>
+                            Training models to be safe through traditional methods often leads to rigid behaviors that either over-refuse harmless requests or fail to detect sophisticated harmful prompts. Our approach addresses this fundamental challenge by leveraging adaptive reasoning - teaching models to think more carefully about ambiguous or potentially dangerous requests while maintaining efficiency on straightforward queries. The key insight is that safety isn't just about recognizing patterns, but about developing the ability to reason through complex scenarios where the line between helpful and harmful isn't immediately clear. Through reinforcement learning, TARS learns to allocate computational resources dynamically, spending more "thinking time" on queries that require careful consideration while quickly processing benign requests.
+                        </p>
+                    </div>
+
+                    <div class="content">
                         <div class="ingredient-box">
                             <div class="ingredient-label">Ingredient 1: Premature Training</div>
                             <p>During the SFT warmup stage before online RL training, we found that incompletely training with early stopping and a low learning rate gives better exploratory behavior during RL. This increases the safety-refusal trade-off after online RL.</p>
@@ -388,15 +408,14 @@
         <div class="container is-max-widescreen">
             <div class="columns is-centered">
                 <div class="column is-four-fifths">
-                    <h3 class="section-title">Citation</h3>
+                    <h3 class="section-title">BibTeX</h3>
                     <div class="content">
                         <div style="background-color: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 1.5rem; font-family: 'Courier New', monospace; font-size: 0.9rem; overflow-x: auto;">
-<pre>@article{kim2024tars,
-  title={TARS: Training Adaptive Reasoners for Safety},
-  author={Kim, Taeyoun and Tajwar, Fahim and Raghunathan, Aditi and Kumar, Aviral},
-  journal={arXiv preprint arXiv:2011.12948},
-  year={2024},
-  institution={Carnegie Mellon University}
+<pre>@article{,
+  title={},
+  author={},
+  journal={},
+  year={},
 }</pre>
                         </div>
                     </div>
@@ -409,7 +428,7 @@
         <div class="container">
             <div class="content has-text-centered">
                 <p style="color: #6c757d; font-size: 0.9rem;">
-                    Website template adapted from <a href="https://nerfies.github.io" style="color: #5ba0f2;">Nerfies</a>
+                    Website template adapted from <a href="https://nerfies.github.io" style="color: #5ba0f2;">here</a>
                 </p>
             </div>
         </div>
