@@ -165,13 +165,13 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Main Figure</h2>
+        <h2 class="title is-3">TARS</h2>
         <div class="content has-text-justified">
           <img src="./static/images/AST Fig.pdf" alt="TARS Main Figure" style="width: 100%; max-width: 800px; margin: 0 auto; display: block;">
         </div>
         
         <div class="content has-text-justified" style="margin-top: 2rem;">
-          <h2 class="title is-3">Abstract</h2>
+          <!-- <h2 class="title is-3">Abstract</h2> -->
           <p>
             Reasoning methods that adaptively allocate test-time compute have advanced LLM performance in math and code. We study how we can utilize this framework to train models that are robust to safety vulnerabilities. We build a recipe called TARS: Training Adaptive Reasoners for Safety, a reinforcement learning (RL) approach that trains models to reason about safety using chain-of-thought traces and a reward signal that balances safety with task completion. When building TARS, we identify three critical design choices: (1) a premature SFT training stage, (2) a mix of harmful, harmless, and ambiguous prompts to prevent shortcut behaviors such as over-refusal, and (3) a reward function to prevent lack of reasoning. Models trained with TARS exhibit adaptive behaviors and spend more compute on ambiguous queries, achieve better safety-refusal trade-offs, internally learn to better distinguish between safe and unsafe prompts, and attain greater robustness to both white-box (e.g., GCG) and black-box attacks (e.g., PAIR). We find that TARS also preserves general reasoning capabilities (e.g., on math benchmarks) despite minimal exposure on such data. Overall, our work provides a principled and open recipe to help LLMs defend against jailbreaks and harmful requests through adaptive reasoning.
           </p>
