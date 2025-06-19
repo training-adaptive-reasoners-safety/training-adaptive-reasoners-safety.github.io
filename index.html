@@ -117,13 +117,36 @@
             padding: 3rem 0;
             margin-top: 2rem;
         }
-        .robustness-image {
+        .robustness-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .robustness-item {
+            text-align: center;
+        }
+        .robustness-item img {
             width: 100%;
-            max-width: 700px;
-            margin: 2rem auto;
-            display: block;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 0.5rem;
+        }
+        .robustness-label {
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #5ba0f2;
+            margin-top: 0.5rem;
+        }
+        @media (max-width: 768px) {
+            .robustness-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 480px) {
+            .robustness-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -304,7 +327,24 @@
                             The results demonstrate that reasoning-based defenses can provide a more principled approach to AI safety compared to traditional methods. The chart below illustrates the robustness analysis across different attack vectors and safety metrics.
                         </p>
                     </div>
-                    <img src="./static/images/robustness_chart.png" alt="Robustness Analysis Chart" class="robustness-image">
+                    <div class="robustness-grid">
+                        <div class="robustness-item">
+                            <img src="./static/images/robustness_chart1.png" alt="White-box Attack Results">
+                            <div class="robustness-label">White-box Attacks (GCG)</div>
+                        </div>
+                        <div class="robustness-item">
+                            <img src="./static/images/robustness_chart2.png" alt="Black-box Attack Results">
+                            <div class="robustness-label">Black-box Attacks (PAIR)</div>
+                        </div>
+                        <div class="robustness-item">
+                            <img src="./static/images/robustness_chart3.png" alt="Safety-Helpfulness Trade-off">
+                            <div class="robustness-label">Safety-Helpfulness Trade-off</div>
+                        </div>
+                        <div class="robustness-item">
+                            <img src="./static/images/robustness_chart4.png" alt="Reasoning Quality Analysis">
+                            <div class="robustness-label">Reasoning Quality Analysis</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
