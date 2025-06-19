@@ -275,7 +275,7 @@
                         </div>
                         <div class="ingredient-box">
                             <div class="ingredient-label">Ingredient 3: Split Rewards</div>
-                            <p>Splitting the reward model into safety and helpfulness rewards increases exploration and a wider safety-refusal trade-off, leadning to increased safety.</p>
+                            <p>Splitting the reward model into safety and helpfulness rewards increases exploration and a wider safety-refusal trade-off, leading to increased safety.</p>
                         </div>
                     </div>
                 </div>
@@ -287,13 +287,14 @@
         <div class="container is-max-widescreen">
             <div class="columns is-centered has-text-centered">
                 <div class="column is-four-fifths">
-                    <h2 class="title is-3" style="margin-bottom: 2rem;">Safety-Refusal Trade-off</h2>
+                    <h2 class="title is-3" style="margin-bottom: 2rem;">How Effective is TARS?</h2>
+                    <h3 style="font-size: 1.5rem; font-weight: bold; color: #333; margin-bottom: 1rem;">Safety-Refusal Trade-off</h3>
                     <div class="content has-text-justified">
                         <img src="./static/images/results.png" alt="TARS Results" class="results-image">
                     </div>
                     <div class="content has-text-justified" style="margin-top: 2rem;">
                         <p>
-                            We compare TARS with SFT/DPO methods that train models to reason using the same prompts and compute. We also compare to RL without reasoning. TARS can achieve the best safety while maintaining low refusal.
+                            We compare TARS-trained models with other training methods: SFT, DPO, and RL without reasoning. For a fair comparison, we train on the same prompts with a similar amount of compute. As shown above, models trained with TARS achieve the best safety-refusal trade-off. This means that defend well against jailbreak attacks and are helpful on harmless prompts without over-refusing. 
                         </p>
                     </div>
                 </div>
