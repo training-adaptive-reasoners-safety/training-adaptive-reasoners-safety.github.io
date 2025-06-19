@@ -319,8 +319,8 @@
                         <thead>
                             <tr>
                                 <th>Group Topic</th>
-                                <th>Reasoning</th>
-                                <th>Answer</th>
+                                <th>Reasoning Length</th>
+                                <th>Answer Length</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -358,10 +358,10 @@
                     <h3 class="section-title">Why is TARS effective?</h3>
                     <div class="content has-text-justified">
                         <p>
-                            Our comprehensive evaluation shows that TARS achieves superior robustness against both white-box attacks (such as Greedy Coordinate Gradient) and black-box attacks (like PAIR). The model maintains strong performance across various attack scenarios while preserving its helpful capabilities on benign requests.
+                            To understand why TARS achieves a strong safety-refusal trade-off, distinct from SFT, DPO, or standard RL, we examine how models internally represent harmful and harmless prompts. Prior work shows that internal separation of these prompts correlates with safety behavior. We investigate whether similar distinctions emerge in TARS between harmless ``ambiguous'' prompts and attack prompts. We extract 2D UMAP projections of final-layer embeddings on XSTest ``safe'' prompts and GCG attack prompts. To quantify separation, we fit a soft-margin SVM (C=0.1).
                         </p>
                         <p>
-                            The results demonstrate that reasoning-based defenses can provide a more principled approach to AI safety compared to traditional methods. The chart below illustrates the robustness analysis across different attack vectors and safety metrics.
+                            As shown above, TARS yields the largest margin between harmful and ambiguous prompts, suggesting some of its better adaptivity comes from internal representations. While the only difference between TARS and RL is the reasoning, the prompt embeddings prior to the reasoning block show better separation. This indicates that TARS-trained models develop internal representations that help anticipate refusal decisions before generating a full chain-of-thought better than SFT or DPO. We hypothesize that training for more helpful reasoning also strengthens internal representations formed during the prompt as all weights of the model are updated.
                         </p>
                     </div>
                     <div class="robustness-grid">
