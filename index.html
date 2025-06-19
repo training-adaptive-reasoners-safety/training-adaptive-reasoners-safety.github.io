@@ -56,6 +56,47 @@
 </head>
 <body>
 
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://hypernerf.github.io">
+            HyperNeRF
+          </a>
+          <a class="navbar-item" href="https://nerfies.github.io">
+            Nerfies
+          </a>
+          <a class="navbar-item" href="https://latentfusion.github.io">
+            LatentFusion
+          </a>
+          <a class="navbar-item" href="https://photoshape.github.io">
+            PhotoShape
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
@@ -114,6 +155,26 @@
             </div>
 
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Main Figure</h2>
+        <div class="content has-text-justified">
+          <img src="./images/AST Fig.pdf" alt="TARS Main Figure" style="width: 100%; max-width: 800px; margin: 0 auto; display: block;">
+        </div>
+        
+        <div class="content has-text-justified" style="margin-top: 2rem;">
+          <h2 class="title is-3">Abstract</h2>
+          <p>
+            Large language models have shown remarkable capabilities in reasoning and problem-solving, but ensuring their safety remains a critical challenge. We introduce TARS (Training Adaptive Reasoners for Safety), a novel approach that trains models to dynamically adapt their reasoning strategies based on safety considerations. Our method leverages reinforcement learning from human feedback to develop adaptive reasoning mechanisms that can identify potentially harmful outputs and redirect toward safer alternatives. Through extensive experiments on safety benchmarks, we demonstrate that TARS significantly improves safety performance while maintaining competitive capabilities on standard reasoning tasks. The adaptive nature of our approach allows models to handle diverse safety scenarios without sacrificing general reasoning abilities.
+          </p>
         </div>
       </div>
     </div>
