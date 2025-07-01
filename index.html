@@ -254,7 +254,7 @@
                         
                         <h3 style="font-size: 1.4rem; font-weight: bold; color: #5ba0f2; margin-bottom: 1rem; margin-top: 2rem;">What is TARS?</h3>
                         <p>
-                        TARS is an online RL training recipe that we build to train models that reason for safety. TARS-trained models can adaptively reason as a defense to achieve high safety on harmful prompts and low refusal on harmless prompts. We find that training models to reason through TARS improves upon the safety-refusal trade-off compared to other training methods for reasoning, existing open-weight models, and even circuit breakers. We release our model to facilitate safety research for reasoning models.
+                        TARS is an online RL training recipe that we build to train models that reason for safety. Models trained with TARS exhibit adaptive behaviors by spending more compute on ambiguous queries, leading to better safety-refusal trade-offs. They also internally learn to better distinguish between safe and unsafe prompts and attain greater robustness to both white-box (e.g., GCG) and black-box attacks (e.g., PAIR). Overall, TARS is an effective, open recipe for training LLMs against jailbreaks and harmful requests by reasoning per prompt.
                         </p>
                         
                         <h3 style="font-size: 1.4rem; font-weight: bold; color: #5ba0f2; margin-bottom: 1rem; margin-top: 2rem;">Why do we build TARS?</h3>
@@ -280,7 +280,7 @@
                     <h2 class="section-title">TARS Recipe</h2>
                     <div class="content has-text-justified" style="margin-bottom: 3rem;">
                         <p>
-                            Reasoning methods that adaptively allocate test-time compute have advanced LLM performance on easy to verify domains such as math and code. In this work, we study how to utilize this approach to train models that exhibit a degree of robustness to safety vulnerabilities, and show that doing so can provide benefits. We build a recipe called TARS: Training Adaptive Reasoners for Safety, a reinforcement learning (RL) approach that trains models to reason about safety using chain-of-thought traces and a reward signal that balances safety with task completion. To build TARS, we identify three critical design choices: (1) a ''lightweight'' warmstart SFT stage, (2) a mix of harmful, harmless, and ambiguous prompts to prevent shortcut behaviors such as too many refusals, and (3) a reward function to prevent degeneration of reasoning capabilities during adversarial training. Models trained with TARS exhibit adaptive behaviors by spending more compute on ambiguous queries, leading to better safety-refusal trade-offs. They also internally learn to better distinguish between safe and unsafe prompts and attain greater robustness to both white-box (e.g., GCG) and black-box attacks (e.g., PAIR). Overall, our work provides an effective, open recipe for training LLMs against jailbreaks and harmful requests by reasoning per prompt.
+                            We identify three critical design choices: (1) a ''lightweight'' warmstart SFT stage, (2) a mix of harmful, harmless, and ambiguous prompts to prevent shortcut behaviors such as too many refusals, and (3) a reward function to prevent degeneration of reasoning capabilities during adversarial training. 
                         </p>
                     </div>
 
