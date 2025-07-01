@@ -263,8 +263,15 @@
         <div class="container is-max-widescreen">
             <div class="columns is-centered has-text-centered">
                 <div class="column is-four-fifths">
-                    <h2 class="section-title">Motivation</h2>
+                    <h2 class="section-title">Overview</h2>
                     <div class="content has-text-justified" style="margin-bottom: 3rem;">
+                        
+                        <h3 style="font-size: 1.4rem; font-weight: bold; color: #5ba0f2; margin-bottom: 1rem; margin-top: 2rem;">What is TARS?</h3>
+                        <p>
+                        TARS is an online RL training recipe for safety that we build to train models that reason for safety. TARS-trained models can adaptively reason as a defense to achieve high safety on harmless prompts and low refusal on harmless prompts. We find that training models to reason through TARS improves upon the safety-refusal trade-off compared to existing open-weight models and circuit breakers. We release one of our models to enhance safety research in reasoning models.
+                        </p>
+                        
+                        <h3 style="font-size: 1.4rem; font-weight: bold; color: #5ba0f2; margin-bottom: 1rem; margin-top: 2rem;">Why do we build TARS?</h3>
                         <p>
                         While reasoning or test-time compute has been shown to improve safety, it remains unclear what the best practices are or what the general recipe is to achieve reasoning models with strong safety and less over-refusal. Key questions include: How should we design the training data? Should we use SFT or RL? What reward functions encourage generalization rather than shortcuts such as refusing to every prompt? To address this, we create an online reinforcement learning recipe with three design choices (ingredients) and train Qwen 2.5 1.5B Instruct into a reasoning model that achieves strong performance on the safety-refusal trade-off. The ablations that led to these design choices are in our <a href="#" style="color: #5ba0f2;">paper</a>.
                         </p>
