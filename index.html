@@ -82,10 +82,96 @@
             margin-bottom: 2rem;
             text-align: center;
         }
+        .reasoning-table {
+            width: 100%;
+            margin: 2rem auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-collapse: collapse;
+            overflow: hidden;
+        }
+        .reasoning-table th {
+            background-color: #5ba0f2;
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: bold;
+        }
+        .reasoning-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .reasoning-table tr:last-child td {
+            border-bottom: none;
+        }
+        .reasoning-table th:nth-child(2),
+        .reasoning-table th:nth-child(3),
+        .reasoning-table td:nth-child(2),
+        .reasoning-table td:nth-child(3) {
+            text-align: center;
+        }
+        .reasoning-table tr:hover {
+            background-color: #f8f9fa;
+        }
         .method-section {
             background-color: #f8f9fa;
             padding: 3rem 0;
             margin-top: 2rem;
+        }
+        .adaptive-section {
+            background-color: #f8f9fa;
+            padding: 3rem 0;
+            margin-top: 2rem;
+        }
+        .robustness-section {
+            /* background-color: #f8f9fa; */
+            padding: 3rem 0;
+            margin-top: 2rem;
+        }
+        .robustness-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .robustness-item {
+            text-align: center;
+        }
+        .robustness-item img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 0.5rem;
+        }
+        .robustness-label {
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #5ba0f2;
+            margin-top: 0.5rem;
+        }
+        .comparison-section {
+            background-color: #f8f9fa;
+            padding: 3rem 0;
+            margin-top: 2rem;
+        }
+        .comparison-image {
+            width: 100%;
+            max-width: 800px;
+            margin: 2rem auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        @media (max-width: 768px) {
+            .robustness-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 480px) {
+            .robustness-grid {
+                grid-template-columns: 1fr;
+            }
         }
         .author-block {
             margin: 0 1rem;
@@ -156,13 +242,15 @@
         </div>
     </section>
 
-    <!-- First Section: Overview -->
     <section class="section">
         <div class="container is-max-widescreen">
             <div class="columns is-centered has-text-centered">
                 <div class="column is-four-fifths">
                     <h2 class="title is-3">Overview</h2>
-                    <div class="content has-text-justified" style="margin-bottom: 3rem;">
+                    <div class="content has-text-justified">
+                        <img src="./static/images/AST Fig.png" alt="TARS Main Figure" style="width: 100%; max-width: 800px; margin: 0 auto; display: block;">
+                    </div>
+                    <div class="content has-text-justified" style="margin-top: 2rem; margin-bottom: 3rem;">
                         
                         <h3 style="font-size: 1.4rem; font-weight: bold; color: #5ba0f2; margin-bottom: 1rem; margin-top: 2rem;">What is TARS?</h3>
                         <p>
@@ -184,16 +272,13 @@
         </div>
     </section>
 
-    <!-- Second Section: TARS -->
+    <!-- Second Section: TARS Recipe -->
     <section class="method-section">
         <div class="container is-max-widescreen">
             <div class="columns is-centered has-text-centered">
                 <div class="column is-four-fifths">
-                    <h2 class="section-title">TARS</h2>
-                    <div class="content has-text-justified">
-                        <img src="./static/images/AST Fig.png" alt="TARS Main Figure" style="width: 100%; max-width: 800px; margin: 0 auto; display: block;">
-                    </div>
-                    <div class="content has-text-justified" style="margin-top: 2rem; margin-bottom: 3rem;">
+                    <h2 class="section-title">TARS Recipe</h2>
+                    <div class="content has-text-justified" style="margin-bottom: 3rem;">
                         <p>
                             Reasoning methods that adaptively allocate test-time compute have advanced LLM performance on easy to verify domains such as math and code. In this work, we study how to utilize this approach to train models that exhibit a degree of robustness to safety vulnerabilities, and show that doing so can provide benefits. We build a recipe called TARS: Training Adaptive Reasoners for Safety, a reinforcement learning (RL) approach that trains models to reason about safety using chain-of-thought traces and a reward signal that balances safety with task completion. To build TARS, we identify three critical design choices: (1) a ''lightweight'' warmstart SFT stage, (2) a mix of harmful, harmless, and ambiguous prompts to prevent shortcut behaviors such as too many refusals, and (3) a reward function to prevent degeneration of reasoning capabilities during adversarial training. Models trained with TARS exhibit adaptive behaviors by spending more compute on ambiguous queries, leading to better safety-refusal trade-offs. They also internally learn to better distinguish between safe and unsafe prompts and attain greater robustness to both white-box (e.g., GCG) and black-box attacks (e.g., PAIR). Overall, our work provides an effective, open recipe for training LLMs against jailbreaks and harmful requests by reasoning per prompt.
                         </p>
