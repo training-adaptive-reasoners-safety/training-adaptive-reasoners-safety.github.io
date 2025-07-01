@@ -268,7 +268,7 @@
                         
                         <h3 style="font-size: 1.4rem; font-weight: bold; color: #5ba0f2; margin-bottom: 1rem; margin-top: 2rem;">What is TARS?</h3>
                         <p>
-                        TARS is an online RL training recipe for safety that we build to train models that reason for safety. TARS-trained models can adaptively reason as a defense to achieve high safety on harmless prompts and low refusal on harmless prompts. We find that training models to reason through TARS improves upon the safety-refusal trade-off compared to existing open-weight models and circuit breakers. We release one of our models to enhance safety research in reasoning models.
+                        TARS is an online RL training recipe that we build to train models that reason for safety. TARS-trained models can adaptively reason as a defense to achieve high safety on harmful prompts and low refusal on harmless prompts. We find that training models to reason through TARS improves upon the safety-refusal trade-off compared to other training methods for reasoning, existing open-weight models, and even circuit breakers. We release our model to facilitate safety research for reasoning models.
                         </p>
                         
                         <h3 style="font-size: 1.4rem; font-weight: bold; color: #5ba0f2; margin-bottom: 1rem; margin-top: 2rem;">Why do we build TARS?</h3>
@@ -279,16 +279,16 @@
 
                     <div class="content">
                         <div class="ingredient-box">
-                            <div class="ingredient-label">Ingredient 1: Premature Training</div>
-                            <p>During the SFT warmup stage before online RL training, we found that incompletely training with early stopping and a low learning rate gives better exploratory behavior during RL. This increases the safety-refusal trade-off after online RL.</p>
+                            <div class="ingredient-label">Ingredient 1: Lightweight SFT</div>
+                            <p>During the SFT warmup stage before online RL training, we found that lightly training with early stopping and a low learning rate increases generation diversity and gives better exploratory behavior during RL. This improves the safety-refusal trade-off after online RL.</p>
                         </div>
                         <div class="ingredient-box">
                             <div class="ingredient-label">Ingredient 2: Mix Prompts</div>
                             <p>Training on solely harmful prompts with a safety reward during RL leads to degenerate reasoning traces and over-refusal on harmless prompts. Thus, we mix in harmless prompts with a task completion reward to encourage reasoning which carries over to harmful prompts.</p>
                         </div>
                         <div class="ingredient-box">
-                            <div class="ingredient-label">Ingredient 3: Split Rewards</div>
-                            <p>Splitting the reward model into safety and helpfulness rewards increases exploration and a wider safety-refusal trade-off, leading to increased safety.</p>
+                            <div class="ingredient-label">Ingredient 3: Reward Design</div>
+                            <p>Splitting the reward model into safety and helpfulness rewards increases exploration leading to a wider safety-refusal trade-off.</p>
                         </div>
                     </div>
                 </div>
