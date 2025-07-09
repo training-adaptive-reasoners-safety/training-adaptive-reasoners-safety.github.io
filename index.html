@@ -279,7 +279,7 @@
                         While reasoning or test-time compute has been shown to improve safety, it remains unclear what the best practices are or what the general recipe is to achieve reasoning models with strong safety and less over-refusal. Key questions include: How should we design the training data? Should we use SFT or RL? What reward functions encourage generalization rather than shortcuts such as refusing to every prompt? To address this, we create an online reinforcement learning recipe with three design choices (ingredients) and train Qwen 2.5 1.5B Instruct into a reasoning model that achieves strong performance on the safety-refusal trade-off. The ablations that led to these design choices are in our <a href="https://arxiv.org/abs/2507.00971" target="_blank" style="color: #5ba0f2;">paper</a>.
                         </p>
 
-                        <h3 style="font-size: 1.4rem; font-weight: bold; color: #5ba0f2; margin-bottom: 1rem; margin-top: 2rem;">Results</h3>
+                        <h3 style="font-size: 1.4rem; font-weight: bold; color: #5ba0f2; margin-bottom: 1rem; margin-top: 2rem;">Results Overview</h3>
                         <p>
                         TARS has a better safety-refusal trade-off than existing open-weight models and defenses such as circuit breakers. TARS is also more effective than other training methods such as SFT, DPO, and RL without reasoning. <a href="#results" style="color: #5ba0f2;">(Skip to results)</a>
                         </p>
